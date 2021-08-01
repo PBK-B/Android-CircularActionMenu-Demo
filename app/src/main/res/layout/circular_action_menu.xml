@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zmide.myapplication3.view.CircularActionMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_menu"
+    android:layout_width="42dp"
+    android:layout_height="42dp"
+    android:gravity="center"
+    android:clickable="false"
+    android:clipChildren="false"
+    android:focusable="true"
+    app:cam_angle="165"
+    app:cam_radius="80dp">
+
+    <ImageView
+        android:id="@+id/main_img1"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_centerInParent="true"
+        android:focusable="true"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_action_ciro"
+        android:tag="Camera" />
+
+    <ImageView
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_action_ciro"
+        android:layout_gravity="center"
+        android:tag="Camera" />
+
+    <ImageView
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_action_ciro"
+        android:layout_gravity="center"
+        android:tag="Sun" />
+
+    <ImageView
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_action_ciro"
+        android:layout_gravity="center"
+        android:tag="Place" />
+
+    <ImageView
+        android:id="@+id/main_img5"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_action_ciro"
+        android:layout_gravity="center"
+        android:tag="Sleep" />
+
+</com.zmide.myapplication3.view.CircularActionMenu>

@@ -5,10 +5,12 @@ import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.PointF;
+
 import androidx.annotation.AttrRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
+
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -79,13 +81,11 @@ public class CircularActionMenu extends FrameLayout {
 
 
     public CircularActionMenu(@NonNull Context context) {
-        super(context);
-        init(null);
+        this(context, null);
     }
 
     public CircularActionMenu(@NonNull Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        init(attrs);
+        this(context, attrs, 0);
     }
 
     public CircularActionMenu(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
@@ -94,8 +94,10 @@ public class CircularActionMenu extends FrameLayout {
     }
 
     private void init(AttributeSet attrs) {
-        if (attrs == null)
+        if (attrs == null) {
+            Log.d("tzmax", "init: err");
             return;
+        }
 
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.CircularActionMenu);
         mRadius = a.getDimensionPixelSize(R.styleable.CircularActionMenu_cam_radius, (int) mRadius);
@@ -253,7 +255,6 @@ public class CircularActionMenu extends FrameLayout {
             minY = Math.min((int) (mItemExpandedPositionOffsets[i].y - item.getMeasuredHeight()), minY);
         }
 
-        Log.d("tzmax", "calcExpandedSize: " + maxX);
         mExpandedWidth = maxX;
         mExpandedHeight = maxY - minY;
     }
